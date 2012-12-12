@@ -35,7 +35,7 @@ public class RenderThread implements Runnable{
 		long oldTime = System.currentTimeMillis();
 		while(true) {
 			for(Entity ent : engine.getEntities()) {
-				if(!ent.getProperties().contains(ENTITY.NO_THINK)) {
+				if(!ent.getProperties().contains(ENTITY.NO_ACT)) {
 					ent.act();
 				}
 			}

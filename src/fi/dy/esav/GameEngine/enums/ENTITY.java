@@ -8,5 +8,5 @@
 
 package fi.dy.esav.GameEngine.enums;
 public enum ENTITY {
-	NO_DRAW, NO_THINK
+	NO_DRAW, NO_ACT
 } 
