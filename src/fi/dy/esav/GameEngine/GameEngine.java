@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class GameEngine {
 	
-	ArrayList<Entity> entities = new ArrayList<Entity>();
-	Stage stage;
+	private ArrayList<Entity> entities = new ArrayList<Entity>();
+	private Stage stage;
 	
-	Thread renderer;
+	private Thread renderer;
 	
 	
 	/**

@@ -11,9 +11,9 @@ import fi.dy.esav.GameEngine.enums.ENTITY;
 
 public class Stage extends JFrame{
 	
-	GameEngine engine;
+	private GameEngine engine;
 	
-	Image backgroundImage;
+	private Image backgroundImage;
 	
 	/**
 	 * Disabled the default constructor method
