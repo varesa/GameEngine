@@ -12,6 +12,8 @@ public class RenderThread implements Runnable{
 	
 	private GameEngine engine;
 	
+	private int FPS = 30;
+	
 	/** 
 	 * Disabled default constructor
 	 */
@@ -28,8 +30,22 @@ public class RenderThread implements Runnable{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		long oldTime = System.currentTimeMillis();
+		while(true) {
+			for(Entity ent : engine.getEntities()) {
+				ent.act();
+			}
+			engine.getStage().repaint();
+			if(System.currentTimeMillis() < oldTime + 1000/FPS) {
+				try {
+					Thread.sleep(oldTime + 1000/FPS - System.currentTimeMillis());
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			oldTime = System.currentTimeMillis();
+		}
 	}
 	
 }

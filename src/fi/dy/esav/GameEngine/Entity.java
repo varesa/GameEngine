@@ -30,9 +30,13 @@ public class Entity implements Comparable{
 	 * To be implemented by a subclass.
 	 * @param g The instance of graphics to draw on.
 	 */
-	public void draw(Graphics g) {
-		
-	}
+	public void draw(Graphics g) {	}
+	
+	/**
+	 * Method to process input, calculate actions & etc. (if applicable)
+	 * To be implemented by a subclass.
+	 */
+	public void act() {	}
 
 	/**
 	 * Set entity special properties (overwrite)
