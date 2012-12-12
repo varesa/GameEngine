@@ -12,7 +12,8 @@ public class GameEngine {
 	 * Constructor method.
 	 */
 	public GameEngine() {
-		
+		stage = new Stage();
+		stage.setSize(800, 600);
 	}
 	
 	/**
@@ -22,13 +23,11 @@ public class GameEngine {
 		return stage;
 	}
 
-
 	/**
 	 * @param stage the stage to set
 	 */
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-
 	
 }
