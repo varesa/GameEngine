@@ -5,10 +5,10 @@ import java.util.EnumSet;
 
 import fi.dy.esav.GameEngine.enums.ENTITY;
 
-public class Entity {
+public class Entity implements Comparable{
 	
 	private EnumSet<ENTITY> properties;
-	private int x, y;
+	private int x, y, z;
 	
 	/**
 	 * Default constructor
@@ -16,8 +16,6 @@ public class Entity {
 	public Entity() {
 		
 	}
-	
-	
 	
 	/**
 	 * Method that is used to draw the entity on the screen (if applicable).
@@ -93,4 +91,22 @@ public class Entity {
 		this.y = y;
 	}
 	
+	/**
+	 * @return the z
+	 */
+	public int getZ() {
+		return z;
+	}
+
+	/**
+	 * @param z the z to set
+	 */
+	public void setZ(int z) {
+		this.z = z;
+	}
+
+	@Override
+	public int compareTo(Object otherEnt) {
+		return this.getZ() - ((Entity)otherEnt).getZ();
+	}
 }

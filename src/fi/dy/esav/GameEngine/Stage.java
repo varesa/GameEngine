@@ -1,17 +1,31 @@
 package fi.dy.esav.GameEngine;
 
+import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.JFrame;
 
+import fi.dy.esav.GameEngine.enums.ENTITY;
+
 public class Stage extends JFrame{
+	
+	GameEngine engine;
+	
 	Image backgroundImage;
 	
 	/**
-	 * Default constructor method
+	 * Disabled the default constructor method
 	 */
-	public Stage() {
-		super();
+	private Stage() {}
+	
+	/**
+	 * Constructor
+	 * @param The main GameEngine instance
+	 */
+	public Stage(GameEngine engine) {
+		this.engine = engine;
 	}
 
 	/**
@@ -28,5 +42,23 @@ public class Stage extends JFrame{
 		this.backgroundImage = background;
 	}
 	
+	/**
+	 * Draw all entities on screen
+	 * @param display Frame graphics to draw on
+	 */
+	@Override
+	public void paint(Graphics display) {
+		Image buffer = createImage(getWidth(), getHeight());
+		Graphics bg = buffer.getGraphics();
 	
+		ArrayList<Entity> entities = this.engine.getEntities();
+		Collections.sort(entities);
+		for(Entity ent : entities) {
+			if(!ent.getProperties().contains(ENTITY.NO_DRAW)) {
+				ent.draw(bg);
+			}
+		}
+		
+		display.drawImage(buffer, 0, 0, this);
+	}
 }
