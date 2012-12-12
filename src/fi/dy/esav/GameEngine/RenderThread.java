@@ -8,6 +8,8 @@
 
 package fi.dy.esav.GameEngine;
 
+import fi.dy.esav.GameEngine.enums.ENTITY;
+
 public class RenderThread implements Runnable{
 	
 	private GameEngine engine;
@@ -33,7 +35,9 @@ public class RenderThread implements Runnable{
 		long oldTime = System.currentTimeMillis();
 		while(true) {
 			for(Entity ent : engine.getEntities()) {
-				ent.act();
+				if(!ent.getProperties().contains(ENTITY.NO_THINK)) {
+					ent.act();
+				}
 			}
 			engine.getStage().repaint();
 			if(System.currentTimeMillis() < oldTime + 1000/FPS) {
