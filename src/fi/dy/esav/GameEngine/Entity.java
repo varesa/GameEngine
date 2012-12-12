@@ -13,7 +13,7 @@ import java.util.EnumSet;
 
 import fi.dy.esav.GameEngine.enums.ENTITY;
 
-public class Entity implements Comparable{
+public class Entity implements Comparable<Entity>{
 	
 	private EnumSet<ENTITY> properties;
 	private int x, y, z;
@@ -118,7 +118,7 @@ public class Entity implements Comparable{
 	}
 
 	@Override
-	public int compareTo(Object otherEnt) {
+	public int compareTo(Entity otherEnt) {
 		return this.getZ() - ((Entity)otherEnt).getZ();
 	}
 }

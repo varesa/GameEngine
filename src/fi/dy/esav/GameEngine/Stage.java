@@ -19,6 +19,11 @@ import fi.dy.esav.GameEngine.enums.ENTITY;
 
 public class Stage extends JFrame{
 	
+	/**
+	 * Generated class serial version UID
+	 */
+	private static final long serialVersionUID = -2864189451696026929L;
+
 	private GameEngine engine;
 	
 	private Image backgroundImage;
@@ -26,6 +31,7 @@ public class Stage extends JFrame{
 	/**
 	 * Disabled the default constructor method
 	 */
+	@SuppressWarnings("unused")
 	private Stage() {}
 	
 	/**

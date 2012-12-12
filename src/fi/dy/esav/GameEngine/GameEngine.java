@@ -32,6 +32,7 @@ public class GameEngine {
 	public void start() {
 		renderer = new Thread(new RenderThread(this));
 		this.getStage().setVisible(true);
+		renderer.start();
 	}
 	
 	/**
