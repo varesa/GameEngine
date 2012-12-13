@@ -22,7 +22,7 @@ import javax.swing.JFrame;
 
 import fi.dy.esav.GameEngine.enums.ENTITY;
 
-public class Stage extends JFrame implements KeyListener, MouseListener, MouseMotionListener{
+public class Stage extends JFrame {
 	
 	/**
 	 * Generated class serial version UID
@@ -30,6 +30,7 @@ public class Stage extends JFrame implements KeyListener, MouseListener, MouseMo
 	private static final long serialVersionUID = -2864189451696026929L;
 
 	private GameEngine engine;
+	private InputHandler inputhandler;
 	
 	private Image backgroundImage;
 	
@@ -45,6 +46,13 @@ public class Stage extends JFrame implements KeyListener, MouseListener, MouseMo
 	 */
 	public Stage(GameEngine engine) {
 		this.engine = engine;
+		
+		InputState inputstate = new InputState(); 
+		this.inputhandler = new InputHandler(inputstate);
+		this.addKeyListener(inputhandler);
+		this.addMouseListener(inputhandler);
+		this.addMouseMotionListener(inputhandler);
+		engine.setInputstate(inputstate);
 	}
 
 	/**
@@ -60,6 +68,7 @@ public class Stage extends JFrame implements KeyListener, MouseListener, MouseMo
 	public void setBackgroundImage(Image background) {
 		this.backgroundImage = background;
 	}
+	
 	
 	/**
 	 * Draw all entities on screen
@@ -79,65 +88,5 @@ public class Stage extends JFrame implements KeyListener, MouseListener, MouseMo
 		}
 		
 		display.drawImage(buffer, 0, 0, this);
-	}
-
-	@Override
-	public void mouseDragged(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 }

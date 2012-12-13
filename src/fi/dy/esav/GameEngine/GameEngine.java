@@ -16,8 +16,10 @@ public class GameEngine {
 	private Stage stage;
 	
 	private Thread renderer;
+	private InputHandler inputhandler; //No modifier -> package-private
+	private InputState	 inputstate;   //No modifier -> package-private
 	
-	
+
 	/**
 	 * Constructor method.
 	 */
@@ -73,6 +75,40 @@ public class GameEngine {
 	 */
 	public ArrayList<Entity> getEntities() {
 		return this.entities;
+	}
+	
+	/**
+	 * Returns the input handler
+	 * Visibility: package-private
+	 * @return the input handler
+	 */
+	InputHandler getInputhandler() {
+		return inputhandler;
+	}
+
+	/**
+	 * Sets the inputHandler
+	 * Visibility: package-private
+	 * @param inputhandler the inputhandler to set
+	 */
+	void setInputhandler(InputHandler inputhandler) {
+		this.inputhandler = inputhandler;
+	}
+
+	/**
+	 * Return the state of inputs
+	 * @return the inputstate
+	 */
+	public InputState getInputstate() {
+		return inputstate;
+	}
+
+	/**
+	 * Sets the input state container
+	 * @param inputstate the input state container
+	 */
+	void setInputstate(InputState inputstate) {
+		this.inputstate = inputstate;
 	}
 	
 }
