@@ -1,22 +1,24 @@
 package fi.dy.esav.GameEngine;
 
 import java.awt.Point;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class InputState {
 	
-	private ArrayList<Integer> keysDown = new ArrayList<Integer>();
+	ArrayList<Integer> keysDown = new ArrayList<Integer>();
 	
-	private int mouseX, mouseY;
-	private boolean mouseLeft, mouseRight;
+	Point mousePos = new Point();
+	ArrayList<Integer> mouseButtons = new ArrayList<Integer>();
 	
 	/**
 	 * Return the state of a key
 	 * @param ADDME The key to be checked
 	 * @return Is the key down?
 	 */
-	public boolean isKeyDown() {
-		return false;
+	public boolean isKeyDown(KeyEvent key) {
+		return keysDown.contains(key);
 	}
 	
 	/**
@@ -24,36 +26,22 @@ public class InputState {
 	 * @param ADDME The key to be checked
 	 * @return Is the key up?
 	 */
-	public boolean isKeyUp() {
-		return !isKeyDown();
+	public boolean isKeyUp(KeyEvent key) {
+		return !isKeyDown(key);
 	}
 
 	/**
 	 * @return the mouseX
 	 */
 	public int getMouseX() {
-		return mouseX;
-	}
-
-	/**
-	 * @param mouseX the mouseX to set
-	 */
-	void setMouseX(int mouseX) {
-		this.mouseX = mouseX;
+		return mousePos.x;
 	}
 
 	/**
 	 * @return the mouseY
 	 */
 	public int getMouseY() {
-		return mouseY;
-	}
-
-	/**
-	 * @param mouseY the mouseY to set
-	 */
-	void setMouseY(int mouseY) {
-		this.mouseY = mouseY;
+		return mousePos.y;
 	}
 	
 	/**
@@ -61,55 +49,28 @@ public class InputState {
 	 * @return Mouse cursor coordinates
 	 */
 	public Point getMousePos() {
-		return new Point(this.mouseX, this.mouseY);
-	}
-	
-	/**
-	 * Set the x and y of the mouse
-	 * @param mousepos Mouse position
-	 */
-	void setMousePos(Point mousepos) {
-		this.mouseX = mousepos.x;
-		this.mouseY = mousepos.y;
-	}
-	
-	/**
-	 * Set the x and y of the mouse
-	 * @param mousepos Mouse position
-	 */
-	void setMousePos(int mousex, int mousey) {
-		this.mouseX = mousex;
-		this.mouseY = mousey;
+		return mousePos;
 	}
 
 	/**
-	 * @return the mouseLeft
+	 * @return the state of the specified mouse button
+	 */
+	public boolean isMouseKey(int key) {
+		return mouseButtons.contains(key);
+	}
+	
+	/**
+	 * @return the state of the left mouse button
 	 */
 	public boolean isMouseLeft() {
-		return mouseLeft;
+		return mouseButtons.contains(MouseEvent.BUTTON1);
 	}
 
 	/**
-	 * @param mouseLeft the mouseLeft to set
-	 */
-	void setMouseLeft(boolean mouseLeft) {
-		this.mouseLeft = mouseLeft;
-	}
-
-	/**
-	 * @return the mouseRigth
+	 * @return the state of the right mouse button
 	 */
 	public boolean isMouseRight() {
-		return mouseRight;
+		return mouseButtons.contains(MouseEvent.BUTTON2);
 	}
-
-	/**
-	 * @param mouseRigth the mouseRigth to set
-	 */
-	void setMouseRight(boolean mouseRight) {
-		this.mouseRight = mouseRight;
-	}
-	
-	
 	
 }
