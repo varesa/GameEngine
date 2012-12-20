@@ -73,4 +73,21 @@ public class InputState {
 		return mouseButtons.contains(MouseEvent.BUTTON2);
 	}
 	
+	/**
+	 * @return A copy of the keyboard state
+	 */
+	@SuppressWarnings("unchecked")
+	public ArrayList<Integer> getKeyboardState() {
+		return (ArrayList<Integer>) keysDown.clone();
+	}
+	
+	/**
+	 * @return A copy of the mouse buttons state
+	 */
+	@SuppressWarnings("unchecked")
+	public ArrayList<Integer> getMouseState() {
+		return (ArrayList<Integer>) mouseButtons.clone();
+	}
+	
+	
 }
