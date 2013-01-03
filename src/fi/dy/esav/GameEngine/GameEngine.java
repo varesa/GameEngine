@@ -38,6 +38,20 @@ public class GameEngine {
 	}
 	
 	/**
+	 * Close the window
+	 */
+	public void close() {
+		this.getStage().setVisible(false);
+	}
+	
+	/**
+	 * Stop the engine
+	 */
+	public void stop() {
+		renderer.stop();
+	}
+	
+	/**
 	 * @return the stage
 	 */
 	public Stage getStage() {
