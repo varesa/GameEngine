@@ -25,6 +25,7 @@ public class Entity implements Comparable<Entity>{
 	 */
 	public Entity(GameEngine engine) {
 		this.engine = engine;
+		properties = EnumSet.noneOf(ENTITY.class);
 	}
 	
 	/**
