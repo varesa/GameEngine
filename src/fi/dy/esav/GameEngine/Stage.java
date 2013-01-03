@@ -53,6 +53,8 @@ public class Stage extends JFrame {
 		this.addMouseListener(inputhandler);
 		this.addMouseMotionListener(inputhandler);
 		engine.setInputstate(inputstate);
+		
+		this.pack();
 	}
 
 	/**
@@ -75,7 +77,7 @@ public class Stage extends JFrame {
 	 * @param display Frame graphics to draw on
 	 */
 	@Override
-	public void paint(Graphics display) {
+	public void paint(Graphics grpahics) {
 		Image buffer = createImage(getWidth(), getHeight());
 		Graphics bg = buffer.getGraphics();
 	
@@ -86,7 +88,6 @@ public class Stage extends JFrame {
 				ent.draw(bg);
 			}
 		}
-		
-		display.drawImage(buffer, 0, 0, this);
+		this.getContentPane().getGraphics().drawImage(buffer, 0, 0, this);
 	}
 }
