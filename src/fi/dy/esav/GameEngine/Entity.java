@@ -15,7 +15,7 @@ import fi.dy.esav.GameEngine.enums.ENTITY;
 
 public class Entity implements Comparable<Entity>{
 	
-	private GameEngine engine;
+	protected GameEngine engine;
 	
 	private EnumSet<ENTITY> properties;
 	private int x, y, z;
