@@ -18,7 +18,7 @@ public class Entity implements Comparable<Entity>{
 	protected GameEngine engine;
 	
 	private EnumSet<ENTITY> properties;
-	private double x, y, z;
+	protected double x = 0, y = 0, z = 0;
 	
 	/**
 	 * Default constructor
