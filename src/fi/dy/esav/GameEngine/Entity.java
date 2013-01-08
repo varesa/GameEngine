@@ -18,7 +18,7 @@ public class Entity implements Comparable<Entity>{
 	protected GameEngine engine;
 	
 	private EnumSet<ENTITY> properties;
-	private int x, y, z;
+	private double x, y, z;
 	
 	/**
 	 * Default constructor
@@ -81,35 +81,35 @@ public class Entity implements Comparable<Entity>{
 	/**
 	 * @return the x
 	 */
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
 	/**
 	 * @param x the x to set
 	 */
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
 	/**
 	 * @return the y
 	 */
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
 	/**
 	 * @param y the y to set
 	 */
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 	
 	/**
 	 * @return the z
 	 */
-	public int getZ() {
+	public double getZ() {
 		return z;
 	}
 
@@ -122,6 +122,6 @@ public class Entity implements Comparable<Entity>{
 
 	@Override
 	public int compareTo(Entity otherEnt) {
-		return this.getZ() - ((Entity)otherEnt).getZ();
+		return (int) (this.getZ() - ((Entity)otherEnt).getZ());
 	}
 }
