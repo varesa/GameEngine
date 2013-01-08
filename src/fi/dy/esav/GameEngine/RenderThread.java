@@ -14,7 +14,7 @@ public class RenderThread implements Runnable{
 	
 	private GameEngine engine;
 	
-	private int FPS = 30;
+	private int FPS = 60;
 	
 	/** 
 	 * Disabled default constructor
