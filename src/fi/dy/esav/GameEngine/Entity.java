@@ -40,6 +40,18 @@ public class Entity implements Comparable<Entity>{
 	 * To be implemented by a subclass.
 	 */
 	public void act() {	}
+	
+	/**
+	 * Method to return the width of an (drawable) object
+	 * To be implemented by a subclass.
+	 */
+	public void getWidth() {	}
+	
+	/**
+	 * Method to return the height of an (drawable) object
+	 * To be implemented by a subclass.
+	 */
+	public void getHeight() {	}
 
 	/**
 	 * Set entity special properties (overwrite)
