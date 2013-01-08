@@ -17,7 +17,7 @@ public class InputState {
 	 * @param ADDME The key to be checked
 	 * @return Is the key down?
 	 */
-	public boolean isKeyDown(KeyEvent key) {
+	public boolean isKeyDown(int key) {
 		return keysDown.contains(key);
 	}
 	
@@ -26,7 +26,7 @@ public class InputState {
 	 * @param ADDME The key to be checked
 	 * @return Is the key up?
 	 */
-	public boolean isKeyUp(KeyEvent key) {
+	public boolean isKeyUp(int key) {
 		return !isKeyDown(key);
 	}
 
