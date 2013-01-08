@@ -77,7 +77,7 @@ public class Stage extends JFrame {
 	 * @param display Frame graphics to draw on
 	 */
 	@Override
-	public void paint(Graphics grpahics) {
+	public void paint(Graphics graphics) {
 		Image buffer = createImage(getWidth(), getHeight());
 		Graphics bg = buffer.getGraphics();
 	
