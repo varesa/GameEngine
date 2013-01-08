@@ -45,13 +45,13 @@ public class Entity implements Comparable<Entity>{
 	 * Method to return the width of an (drawable) object
 	 * To be implemented by a subclass.
 	 */
-	public void getWidth() {	}
+	public int getWidth() {	return null; }
 	
 	/**
 	 * Method to return the height of an (drawable) object
 	 * To be implemented by a subclass.
 	 */
-	public void getHeight() {	}
+	public int getHeight() { return null; }
 
 	/**
 	 * Set entity special properties (overwrite)
