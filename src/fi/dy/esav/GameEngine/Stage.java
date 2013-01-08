@@ -52,7 +52,7 @@ public class Stage extends JFrame {
 		this.addKeyListener(inputhandler);
 		this.addMouseListener(inputhandler);
 		this.addMouseMotionListener(inputhandler);
-		engine.setInputstate(inputstate);
+		engine.setInputState(inputstate);
 		
 		this.pack();
 	}
