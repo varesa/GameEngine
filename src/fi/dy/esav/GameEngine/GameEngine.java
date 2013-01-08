@@ -113,7 +113,7 @@ public class GameEngine {
 	 * Return the state of inputs
 	 * @return the inputstate
 	 */
-	public InputState getInputstate() {
+	public InputState getInputState() {
 		return inputstate;
 	}
 
@@ -121,7 +121,7 @@ public class GameEngine {
 	 * Sets the input state container
 	 * @param inputstate the input state container
 	 */
-	void setInputstate(InputState inputstate) {
+	void setInputState(InputState inputstate) {
 		this.inputstate = inputstate;
 	}
 	
