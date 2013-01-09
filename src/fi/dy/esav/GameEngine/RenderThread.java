@@ -15,6 +15,8 @@ public class RenderThread implements Runnable{
 	private GameEngine engine;
 	
 	private int FPS = 60;
+	private boolean running = true;
+	private boolean paused = false;
 	
 	/** 
 	 * Disabled default constructor
@@ -33,7 +35,17 @@ public class RenderThread implements Runnable{
 	@Override
 	public void run() {
 		long oldTime = System.currentTimeMillis();
-		while(true) {
+		while(running) {
+			
+			while(paused) {
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 			for(Entity ent : engine.getEntities()) {
 				if(!ent.getProperties().contains(ENTITY.NO_ACT)) {
 					ent.act();
@@ -51,5 +63,28 @@ public class RenderThread implements Runnable{
 			oldTime = System.currentTimeMillis();
 		}
 	}
+	
+	/*
+	 * Pause the rendering (but not the thread)
+	 */
+	public void pause() {
+		paused = true;
+	}
+	
+	/*
+	 * Resume the rendering (if paused)
+	 */
+	public void resume() {
+		paused = false;
+	}
+	
+	/*
+	 * Stop the rendering (and the thread)
+	 */
+	public void stop() {
+		running = false;
+	}
+	
+	
 	
 }
