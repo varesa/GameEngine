@@ -15,7 +15,8 @@ public class GameEngine {
 	private ArrayList<Entity> entities = new ArrayList<Entity>();
 	private Stage stage;
 	
-	private Thread renderer;
+	private RenderThread renderer;
+	private Thread rendererThread;
 	private InputHandler inputhandler; //No modifier -> package-private
 	private InputState	 inputstate;   //No modifier -> package-private
 	
@@ -32,9 +33,12 @@ public class GameEngine {
 	 * Start the engine (initialization + show)
 	 */
 	public void start() {
-		renderer = new Thread(new RenderThread(this));
+		
+		renderer = new RenderThread(this);
+		rendererThread = new Thread(renderer);
+		
 		this.getStage().setVisible(true);
-		renderer.start();
+		rendererThread.start();
 	}
 	
 	/**

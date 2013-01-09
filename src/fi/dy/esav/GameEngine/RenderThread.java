@@ -81,7 +81,7 @@ public class RenderThread implements Runnable{
 	/*
 	 * Stop the rendering (and the thread)
 	 */
-	public void stopThread() {
+	public void stop() {
 		running = false;
 	}
 	
