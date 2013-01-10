@@ -132,6 +132,12 @@ public class Entity implements Comparable<Entity>{
 		this.z = z;
 	}
 
+	/**
+	 * Method to compare the "depths" of different entities,
+	 * for arraylist.sort() to work
+	 * @param another entity to compare to
+	 * @return difference between the z coordinates of this and other entity
+	 */
 	@Override
 	public int compareTo(Entity otherEnt) {
 		return (int) (this.getZ() - ((Entity)otherEnt).getZ());
