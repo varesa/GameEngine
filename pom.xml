@@ -17,4 +17,10 @@
       </plugin>
     </plugins>
   </build>
+  <parent>
+  	<groupId>fi.dy.esav</groupId>
+  	<artifactId>global-pom</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<relativePath/> 
+  </parent>
 </project>
