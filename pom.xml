@@ -11,11 +11,11 @@
       <name>Internal Releases</name>
       <url>http://192.168.0.217:8081/nexus/content/repositories/oma_release</url>
     </repository>
-    <snapshotRepository>
+    <repository>
       <id>snapshotRepo</id>
       <name>Internal Snapshots</name>
       <url>http://192.168.0.217:8081/nexus/content/repositories/oma_snapshot</url>
-    </snapshotRepository>
+    </repository>
     <repository>
       <id>otherRepo</id>
       <name>Other</name>
