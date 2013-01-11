@@ -32,7 +32,6 @@ public class RenderThread implements Runnable{
 		this.engine = engine;
 	}
 
-	@Override
 	public void run() {
 		long oldTime = System.currentTimeMillis();
 		while(running) {

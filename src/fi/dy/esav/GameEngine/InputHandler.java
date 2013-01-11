@@ -24,62 +24,52 @@ public class InputHandler implements MouseListener, MouseMotionListener, KeyList
 		this.inputstate = state;
 	}
 	
-	@Override
 	public void keyPressed(KeyEvent e) {
 		if(inputstate.keysDown.contains(e.getKeyCode())) return;
 		inputstate.keysDown.add(e.getKeyCode());
 		
 	}
 
-	@Override
 	public void keyReleased(KeyEvent e) {
 		if(!inputstate.keysDown.contains(e.getKeyCode())) return;
 		inputstate.keysDown.remove((Object)e.getKeyCode());
 		
 	}
-
-	@Override
+	
 	public void keyTyped(KeyEvent e) {
 		// Do nothing
 	}
 
-	@Override
 	public void mouseDragged(MouseEvent e) {
 		// Do nothing
 		
 	}
 
-	@Override
 	public void mouseMoved(MouseEvent e) {
 		inputstate.mousePos = e.getPoint();
 	}
 
-	@Override
 	public void mouseClicked(MouseEvent e) {
 		// Do nothing
 		
 	}
 
-	@Override
 	public void mouseEntered(MouseEvent e) {
 		// Do nothing
 		
 	}
 
-	@Override
 	public void mouseExited(MouseEvent e) {
 		// Do nothing
 		
 	}
 
-	@Override
 	public void mousePressed(MouseEvent e) {
 		if(inputstate.mouseButtons.contains(e.getButton())) return;
 		inputstate.mouseButtons.add(e.getButton());
 		
 	}
 
-	@Override
 	public void mouseReleased(MouseEvent e) {
 		if(!inputstate.mouseButtons.contains((Object)e.getButton())) return;
 		inputstate.mouseButtons.remove((Object)e.getButton());		
