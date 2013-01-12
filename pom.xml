@@ -3,7 +3,14 @@
   <groupId>fi.dy.esav</groupId>
   <artifactId>GameEngine</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>A simple game engine in java</name>
+  <name>Java GameEngine</name>
+  
+  <parent>
+    <groupId>fi.dy.esav</groupId>
+    <artifactId>global-pom</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath/> 
+  </parent>
   
   <repositories>
     <repository>
@@ -26,10 +33,5 @@
       </plugin>
     </plugins>
   </build>
-  <parent>
-    <groupId>fi.dy.esav</groupId>
-    <artifactId>global-pom</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <relativePath/> 
-  </parent>
+  <description>A simple game engine in java</description>
 </project>
