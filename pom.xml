@@ -7,6 +7,10 @@
 
 	<name>Java GameEngine</name>
 	<description>A simple game engine in java</description>
+	
+	<scm>
+		<connection>scm:git:ssh://git@github.com/varesa/GameEngine.git</connection>
+	</scm>
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
