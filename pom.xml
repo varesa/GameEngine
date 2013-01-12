@@ -3,7 +3,9 @@
   <groupId>fi.dy.esav</groupId>
   <artifactId>GameEngine</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
   <name>Java GameEngine</name>
+  <description>A simple game engine in java</description>
   
   <parent>
     <groupId>fi.dy.esav</groupId>
@@ -33,5 +35,4 @@
       </plugin>
     </plugins>
   </build>
-  <description>A simple game engine in java</description>
 </project>
