@@ -23,4 +23,17 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<distributionManagement>
+		<snapshotRepository>
+			<id>snapshotRepo</id>
+			<layout>default</layout>
+			<url>http://nexus.esav.dy.fi/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>releaseRepo</id>
+			<layout>default</layout>
+			<url>http://nexus.esav.dy.fi/nexus/content/repositories/releases/</url>
+		</repository>
+	</distributionManagement>
 </project>
