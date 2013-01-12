@@ -13,13 +13,13 @@
     </repository>
   </repositories>
 
-  <distributionManagement>
+  <!--<distributionManagement>
     <snapshotRepository>
       <id>snapshotRepo</id>
       <name>Internal Snapshots</name>
       <url>http://192.168.0.217:8081/nexus/content/repositories/snapshots</url>
     </snapshotRepository>
-  </distributionManagement>
+  </distributionManagement>-->
   
   <build>
     <sourceDirectory>src</sourceDirectory>
