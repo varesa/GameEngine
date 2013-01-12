@@ -8,41 +8,6 @@
 	<name>Java GameEngine</name>
 	<description>A simple game engine in java</description>
 
-	<repositories>
-		<repository>
-			<id>otherRepo</id>
-			<name>Other</name>
-			<url>http://192.168.0.217:8081/nexus/content/repositories/others</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>otherRepo</id>
-			<name>Other</name>
-			<url>http://192.168.0.217:8081/nexus/content/repositories/others</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
-	<parent>
-		<groupId>fi.dy.esav</groupId>
-		<artifactId>global-pom</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath />
-	</parent>
-
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
