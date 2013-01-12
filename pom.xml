@@ -9,7 +9,7 @@
     <repository>
       <id>otherRepo</id>
       <name>Other</name>
-      <url>http://192.168.0.217:8081/nexus/content/repositories/oma_other</url>
+      <url>http://192.168.0.217:8081/nexus/content/repositories/others</url>
     </repository>
   </repositories>
 
@@ -34,10 +34,10 @@
       </plugin>
     </plugins>
   </build>
-  <!--<parent>
-  	<groupId>fi.dy.esav</groupId>
-  	<artifactId>global-pom</artifactId>
-  	<version>0.0.1-SNAPSHOT</version>
-  	<relativePath/> 
-  </parent>-->
+  <parent>
+    <groupId>fi.dy.esav</groupId>
+    <artifactId>global-pom</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath/> 
+  </parent>
 </project>
