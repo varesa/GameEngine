@@ -74,7 +74,7 @@ public class GameEngine {
 	 * @param ent Entity to be added
 	 * @return finishing status of the operation
 	 */
-	public boolean addEntity(Entity ent) {
+	public synchronized boolean addEntity(Entity ent) {
 		return entities.add(ent);
 	}
 	
@@ -83,7 +83,7 @@ public class GameEngine {
 	 * @param ent entity to be removed
 	 * @return finishing status of the operation
 	 */
-	public boolean removeEntity(Entity ent) {
+	public synchronized boolean removeEntity(Entity ent) {
 		return entities.remove(ent);
 	}
 	
@@ -91,7 +91,7 @@ public class GameEngine {
 	 * Get all entities
 	 * @return ArrayList containing all the entities
 	 */
-	public ArrayList<Entity> getEntities() {
+	public synchronized ArrayList<Entity> getEntities() {
 		return this.entities;
 	}
 	
@@ -109,7 +109,7 @@ public class GameEngine {
 	 * Visibility: package-private
 	 * @param inputhandler the inputhandler to set
 	 */
-	void setInputhandler(InputHandler inputhandler) {
+	synchronized void setInputhandler(InputHandler inputhandler) {
 		this.inputhandler = inputhandler;
 	}
 
@@ -125,7 +125,7 @@ public class GameEngine {
 	 * Sets the input state container
 	 * @param inputstate the input state container
 	 */
-	void setInputState(InputState inputstate) {
+	synchronized void setInputState(InputState inputstate) {
 		this.inputstate = inputstate;
 	}
 	
