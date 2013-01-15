@@ -40,7 +40,6 @@ public class RenderThread implements Runnable{
 				try {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -55,7 +54,6 @@ public class RenderThread implements Runnable{
 				try {
 					Thread.sleep(oldTime + 1000/FPS - System.currentTimeMillis());
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
