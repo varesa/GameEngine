@@ -103,7 +103,8 @@ public class Stage extends JFrame {
 		Image buffer = createImage(getWidth(), getHeight());
 		Graphics bg = buffer.getGraphics();
 	
-		ArrayList<Entity> entities = this.engine.getEntities();
+		@SuppressWarnings("unchecked")
+		ArrayList<Entity> entities = (ArrayList<Entity>) engine.getEntities().clone();
 		Collections.sort(entities);
 		for(Entity ent : entities) {
 			if(!ent.getProperties().contains(ENTITY.NO_DRAW)) {
