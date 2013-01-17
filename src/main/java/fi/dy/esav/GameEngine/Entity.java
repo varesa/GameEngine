@@ -26,6 +26,30 @@ public class Entity implements Comparable<Entity>{
 	 */
 	public Entity(GameEngine engine) {
 		this.engine = engine;
+		init();
+	}
+	
+	/**
+	 * Additional constructor
+	 */
+	public Entity(Point position, GameEngine engine) {
+		init();
+		this.engine = engine;
+		this.setPos(position);
+	}
+	
+	/**
+	 * Additional constructor
+	 */
+	public Entity(double x, double y, GameEngine engine) {
+		init();
+		this.setPos(x, y);
+	}
+	
+	/**
+	 * A initialization method that is common to all constructors
+	 */
+	private void init() {
 		properties = EnumSet.noneOf(ENTITY.class);
 	}
 	
@@ -132,6 +156,14 @@ public class Entity implements Comparable<Entity>{
 	public void setPos(Point newPos) {
 		this.x = newPos.x;
 		this.y = newPos.y;
+	}
+	
+	/**
+	 * @param The coordinates where to set the new position
+	 */
+	public void setPos(double x, double y) {
+		this.x = x;
+		this.y = y;
 	}
 	
 	/**
