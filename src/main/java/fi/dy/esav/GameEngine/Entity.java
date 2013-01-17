@@ -147,7 +147,21 @@ public class Entity implements Comparable<Entity>{
 	public void setZ(int z) {
 		this.z = z;
 	}
-
+	
+	/**
+	 * Put the selected object to front
+	 */
+	public void toFront() {
+		this.z = engine.getStage().getMaxZ() + 10;
+	}
+	
+	/**
+	 * Put the selected object to back
+	 */
+	public void toBack() {
+		this.z = engine.getStage().getMinZ() - 10;
+	}
+	
 	/**
 	 * Method to compare the "depths" of different entities,
 	 * for arraylist.sort() to work
