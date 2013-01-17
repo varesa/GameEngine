@@ -1,6 +1,7 @@
 package fi.dy.esav.GameEngine;
 
 import java.awt.Point;
+import java.awt.Rectangle;
 
 public class Utils {
 	
@@ -51,4 +52,18 @@ public class Utils {
 	public static double getYDistanceCenters(Entity ent1, Entity ent2) {
 		return Point.distance(0, ent1.y+(ent1.getHeight()/2), 0, ent2.y+(ent2.getHeight()/2));
 	}
+	
+	/**
+	 * A method that checks if the bounding rectangles of two entities are colliding
+	 * The entity must override and implement getWidth() and getHeight()
+	 * @param ent1 One of the two entities to be tested
+	 * @param ent2 Other one of the two entities to be tested
+	 * @return Boolean value on wether the rectangles collide or not
+	 */
+	public static boolean simpleHitTest(Entity ent1, Entity ent2) {
+		Rectangle rect1 = new Rectangle((int)ent1.x, (int)ent1.y, ent1.getWidth(), ent1.getHeight());
+		Rectangle rect2 = new Rectangle((int)ent2.x, (int)ent2.y, ent2.getWidth(), ent2.getHeight());
+		
+		return rect1.intersects(rect2);
+	} 
 }
