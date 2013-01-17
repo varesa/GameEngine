@@ -66,6 +66,33 @@ public class Stage extends JFrame {
 		this.backgroundImage = background;
 	}
 	
+	/**
+	 * Get the highest Z value
+	 * @return the highest Z value
+	 */
+	public double getMaxZ() {
+		double maxz = -1000;
+		for(Entity ent : engine.getEntities()) {
+			if(ent.getZ() > maxz) {
+				maxz = ent.getZ();
+			}
+		}
+		return maxz;
+	}
+	
+	/**
+	 * Get the smallest Z value
+	 * @return the smallest Z value  
+	 */
+	public double getMinZ() {
+		double minz = 1000;
+		for(Entity ent : engine.getEntities()) {
+			if(ent.getZ() < minz) {
+				minz = ent.getZ();
+			}
+		}
+		return minz;
+	}
 	
 	/**
 	 * Draw all entities on screen
