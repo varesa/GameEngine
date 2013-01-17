@@ -13,12 +13,14 @@ import java.util.ArrayList;
 public class GameEngine {
 	
 	private ArrayList<Entity> entities = new ArrayList<Entity>();
+	private ArrayList<Entity> entitiesToAdd = new ArrayList<Entity>();
+	private ArrayList<Entity> entitiesToRemove = new ArrayList<Entity>();
 	private Stage stage;
 	
 	private RenderThread renderer;
 	private Thread rendererThread;
-	private InputHandler inputhandler; //No modifier -> package-private
-	private InputState	 inputstate;   //No modifier -> package-private
+	private InputHandler inputhandler;
+	private InputState	 inputstate;
 	
 
 	/**
@@ -75,7 +77,7 @@ public class GameEngine {
 	 * @return finishing status of the operation
 	 */
 	public synchronized boolean addEntity(Entity ent) {
-		return entities.add(ent);
+		return entitiesToAdd.add(ent);
 	}
 	
 	/**
@@ -84,7 +86,20 @@ public class GameEngine {
 	 * @return finishing status of the operation
 	 */
 	public synchronized boolean removeEntity(Entity ent) {
-		return entities.remove(ent);
+		return entitiesToRemove.add(ent);
+	}
+	
+	/**
+	 * An method to be run after a render/physics cycle
+	 * to maintain things like the entity arrays
+	 */
+	void maintain() {
+		for(Entity ent: entitiesToAdd) {
+			entities.add(ent);
+		}
+		for(Entity ent: entitiesToRemove) {
+			entities.remove(ent);
+		}
 	}
 	
 	/**

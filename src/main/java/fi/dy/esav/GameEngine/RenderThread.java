@@ -50,6 +50,9 @@ public class RenderThread implements Runnable{
 				}
 			}
 			engine.getStage().repaint();
+			
+			engine.maintain();
+			
 			if(System.currentTimeMillis() < oldTime + 1000/FPS) {
 				try {
 					Thread.sleep(oldTime + 1000/FPS - System.currentTimeMillis());
