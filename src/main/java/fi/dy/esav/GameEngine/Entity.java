@@ -23,6 +23,7 @@ public class Entity implements Comparable<Entity>{
 	
 	/**
 	 * Default constructor
+	 * @param engine Reference to the GameEngine
 	 */
 	public Entity(GameEngine engine) {
 		this.engine = engine;
@@ -31,6 +32,8 @@ public class Entity implements Comparable<Entity>{
 	
 	/**
 	 * Additional constructor
+	 * @param engine Reference to the GameEngine
+	 * @param position point to position the entity at
 	 */
 	public Entity(Point position, GameEngine engine) {
 		init();
@@ -40,6 +43,9 @@ public class Entity implements Comparable<Entity>{
 	
 	/**
 	 * Additional constructor
+	 * @param engine Reference to the GameEngine
+	 * @param x X-Coordinate to position the entity at
+	 * @param y Y-Coordinate to position the entity at
 	 */
 	public Entity(double x, double y, GameEngine engine) {
 		init();
@@ -151,7 +157,7 @@ public class Entity implements Comparable<Entity>{
 	}
 	
 	/**
-	 * @param The Point where to set the new position
+	 * @param point  The Point where to set the new position
 	 */
 	public void setPos(Point newPos) {
 		this.x = newPos.x;
@@ -159,7 +165,8 @@ public class Entity implements Comparable<Entity>{
 	}
 	
 	/**
-	 * @param The coordinates where to set the new position
+	 * @param x X-coordinate for new location
+	 * @param y Y-coordinate for new location
 	 */
 	public void setPos(double x, double y) {
 		this.x = x;
