@@ -9,6 +9,7 @@
 package fi.dy.esav.GameEngine;
 
 import java.awt.Graphics;
+import java.awt.Point;
 import java.util.EnumSet;
 
 import fi.dy.esav.GameEngine.enums.ENTITY;
@@ -116,6 +117,21 @@ public class Entity implements Comparable<Entity>{
 	 */
 	public void setY(double y) {
 		this.y = y;
+	}
+	
+	/**
+	 * @return the Point where the Entity is
+	 */
+	public Point getPos() {
+		return new Point((int)this.x, (int)this.y);
+	}
+	
+	/**
+	 * @param The Point where to set the new position
+	 */
+	public void setPos(Point newPos) {
+		this.x = newPos.x;
+		this.y = newPos.y;
 	}
 	
 	/**
