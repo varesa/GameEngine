@@ -97,9 +97,11 @@ public class GameEngine {
 		for(Entity ent: entitiesToAdd) {
 			entities.add(ent);
 		}
+		entitiesToAdd.clear();
 		for(Entity ent: entitiesToRemove) {
 			entities.remove(ent);
 		}
+		entitiesToRemove.clear();
 	}
 	
 	/**
