@@ -49,6 +49,7 @@ public class Entity implements Comparable<Entity>{
 	 */
 	public Entity(double x, double y, GameEngine engine) {
 		init();
+		this.engine = engine;
 		this.setPos(x, y);
 	}
 	
