@@ -108,8 +108,9 @@ public class GameEngine {
 	 * Get all entities
 	 * @return ArrayList containing all the entities
 	 */
+	@SuppressWarnings("unchecked")
 	public synchronized ArrayList<Entity> getEntities() {
-		return this.entities;
+		return (ArrayList<Entity>) this.entities.clone();
 	}
 	
 	/**
